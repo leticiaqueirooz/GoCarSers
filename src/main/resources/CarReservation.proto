@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+// generate separate or multiple java file for each generated class.
+option java_multiple_files = true;
+// Package inside the src/main/java where generated classes will reside.
+option java_package = "carreservation";
+// Class name of the wrapper class which represent this file.
+option java_outer_classname = "CarReservationServiceImpl";
+
+// package name to avoid name collisions
+package strings;
+
+// Interface exported by the server.
+service CarReservation {
+
+// rpc method for bidirectional streaming calls
+  rpc LoginCar (stream LoginCarRequest) returns (stream LoginCarResponse) {}
+
+// Unary
+  rpc UnlockCar (UnlockCarRequest) returns (UnlockCarResponse) {}
+}
+
+// define each variable in rpc method separately
+
+message LoginCarRequest {
+  string val = 1;
+}
+
+message LoginCarResponse {
+  string val = 1;
+}
+
+// define each variable in rpc method separately
+message UnlockCarRequest {
+  string key=1 ;
+  string password=2 ;
+
+}
+
+message UnlockCarResponse {
+  bool  unloocked = 1;
+}

@@ -1,0 +1,40 @@
+syntax = "proto3";
+// generate separate or multiple java file for each generated class.
+option java_multiple_files = true;
+// Package inside the src/main/java where generated classes will reside.
+option java_package = "carselection";
+// Class name of the wrapper class which represent this file.
+option java_outer_classname = "CarSelectionServiceImpl";
+
+// package name to avoid name collisions
+package CarSelection;
+
+// Interface exported by the server.
+service CarSelection {
+
+// rpc method for bidirectional streaming calls
+  rpc SelectCar (stream SelectCarRequest) returns (stream SelectCarResponse) {}
+
+// client stream
+  rpc ChooseCar (stream ChooseCarRequest) returns (ChooseCarResponse);
+
+}
+
+// define each variable in rpc method separately
+
+message SelectCarRequest {
+  string val1 = 1;
+}
+
+message SelectCarResponse {
+  string val2= 1;
+}
+
+message ChooseCarResponse {
+  int32 length1 = 1;
+}
+
+
+message ChooseCarRequest {
+  string val3 = 1;
+}

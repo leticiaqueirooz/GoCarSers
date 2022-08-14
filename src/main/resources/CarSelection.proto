@@ -12,7 +12,7 @@ package CarSelection;
 // Interface exported by the server.
 service CarSelection {
 
-// rpc method for bidirectional streaming calls
+// rpc method for server streaming calls
   rpc SelectCar (stream SelectCarRequest) returns (stream SelectCarResponse) {}
 
 // client stream

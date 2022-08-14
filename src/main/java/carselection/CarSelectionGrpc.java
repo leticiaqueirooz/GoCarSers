@@ -126,7 +126,7 @@ public final class CarSelectionGrpc {
 
     /**
      * <pre>
-     * rpc method for bidirectional streaming calls
+     * rpc method for server streaming calls
      * </pre>
      */
     public io.grpc.stub.StreamObserver<carselection.SelectCarRequest> selectCar(
@@ -187,7 +187,7 @@ public final class CarSelectionGrpc {
 
     /**
      * <pre>
-     * rpc method for bidirectional streaming calls
+     * rpc method for server streaming calls
      * </pre>
      */
     public io.grpc.stub.StreamObserver<carselection.SelectCarRequest> selectCar(
